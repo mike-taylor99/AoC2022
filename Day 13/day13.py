@@ -86,18 +86,7 @@ def getDecoderKey(packets):
     allPackets = packets + DIVIDER_PACKETS
     mergeSort(allPackets)
 
-    return allPackets.index(DIVIDER_PACKETS[0]) * allPackets.index(DIVIDER_PACKETS[1])
-
-    i = index1 = index2 = 0
-    while i < len(allPackets):
-        if allPackets[i] == DIVIDER_PACKETS[0]:
-            index1 = i + 1
-        elif allPackets[i] == DIVIDER_PACKETS[1]:
-            index2 = i + 1
-        i += 1
-
-    return index1 * index2
-    
+    return allPackets.index(DIVIDER_PACKETS[0]) * allPackets.index(DIVIDER_PACKETS[1])    
 
 with open(pathname) as input:
     packets = [json.loads(line.strip()) for line in input if line.strip()]
